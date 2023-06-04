@@ -4,7 +4,7 @@ import * as fs from 'fs';
 
 const cmd = 'sox';
 const args = ['-d', '-t', 'coreaudio', '-t', 'wav', '-'];
-const soundBasePath = 'src/sounds/';
+const soundBasePath = 'sounds/';
 const onStartSound = soundBasePath + 'Hero.aiff';
 const onStopSound = soundBasePath + 'Submarine.aiff';
 const onCancelSound = soundBasePath + 'Cancel.aiff';

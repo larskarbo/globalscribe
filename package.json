@@ -8,12 +8,13 @@
 		"node": ">=16"
 	},
 	"scripts": {
-		"build": "tsc",
+		"build": "tsc && cp -r src/sounds dist/sounds",
 		"dev": "tsc --watch",
 		"test": "prettier --check . && xo && ava"
 	},
 	"files": [
-		"dist"
+		"dist",
+		"sounds"
 	],
 	"dependencies": {
 		"clipboardy": "^3.0.0",
