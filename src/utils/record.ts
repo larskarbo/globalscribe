@@ -1,13 +1,19 @@
 import {exec, spawn} from 'child_process';
-import {Readable} from 'stream';
 import * as fs from 'fs';
+import path from 'path';
+import {Readable} from 'stream';
+import {fileURLToPath} from 'url';
 
 const cmd = 'sox';
 const args = ['-d', '-t', 'coreaudio', '-t', 'wav', '-'];
-const soundBasePath = 'sounds/';
-const onStartSound = soundBasePath + 'Hero.aiff';
-const onStopSound = soundBasePath + 'Submarine.aiff';
-const onCancelSound = soundBasePath + 'Cancel.aiff';
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
+
+const soundBasePath = path.join(__dirname, `../../sounds/`);
+const onStartSound = path.join(soundBasePath, 'Hero.aiff');
+const onStopSound = path.join(soundBasePath, 'Submarine.aiff');
+const onCancelSound = path.join(soundBasePath, 'Cancel.aiff');
 
 let recordingProcess: ReturnType<typeof spawn> | null = null;
 let audioBuffer: Buffer[] = [];
