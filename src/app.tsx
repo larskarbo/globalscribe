@@ -59,7 +59,7 @@ export default function App() {
 					<Text color={'red'}>● Recording...</Text>
 				</Box>
 				<Text>
-					Press <Text color="green">cmd+alt+ctrl+shift+h</Text> to stop
+					Press <Text color="green">cmd+opt+ctrl+shift+w</Text> to stop
 					recording and transcribe...
 				</Text>
 				<Text>
@@ -73,7 +73,7 @@ export default function App() {
 		content = (
 			<Text>
 				Listening for global shortcut{' '}
-				<Text color="green">cmd+alt+ctrl+shift+h</Text>...
+				<Text color="green">cmd+opt+ctrl+shift+w</Text>...
 			</Text>
 		);
 	}
