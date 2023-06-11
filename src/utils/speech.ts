@@ -17,9 +17,10 @@ export const transcribeAndPaste = async () => {
 	globalPaste(transcription);
 	return transcription;
 };
-
+// @ts-ignore
 let ctrlDown = false;
 let shiftDown = false;
+// @ts-ignore
 let optionDown = false;
 let commandDown = false;
 
@@ -46,11 +47,9 @@ export const startListening = ({
 		}
 
 		if (
-			ctrlDown &&
 			shiftDown &&
-			optionDown &&
 			commandDown &&
-			e.rawKey.name === 'W' &&
+			e.rawKey.name === 'T' &&
 			e.state === 'DOWN'
 		) {
 			onStartOrStop();
