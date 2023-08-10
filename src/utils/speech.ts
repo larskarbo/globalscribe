@@ -8,8 +8,8 @@ import {speechToText} from './speechToText.js';
 
 const v = new GlobalKeyboardListener();
 
-export const transcribeAndPaste = async () => {
-	const filePath = '.rec.wav';
+export const transcribeAndPaste = async (filePathOverride?: string) => {
+	const filePath = filePathOverride || '.rec.wav';
 
 	const file = await fs.readFile(filePath);
 	const transcription = await speechToText(file, ``);
@@ -17,10 +17,9 @@ export const transcribeAndPaste = async () => {
 	globalPaste(transcription);
 	return transcription;
 };
-// @ts-ignore
+
 let ctrlDown = false;
 let shiftDown = false;
-// @ts-ignore
 let optionDown = false;
 let commandDown = false;
 
@@ -47,9 +46,11 @@ export const startListening = ({
 		}
 
 		if (
+			ctrlDown &&
 			shiftDown &&
+			optionDown &&
 			commandDown &&
-			e.rawKey.name === 'T' &&
+			e.rawKey.name === 'W' &&
 			e.state === 'DOWN'
 		) {
 			onStartOrStop();
