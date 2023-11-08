@@ -4,8 +4,8 @@ import {
 	cancelRecording,
 	startRecording,
 	stopRecording,
-} from './utils/record.js';
-import {startListening, transcribeAndPaste} from './utils/speech.js';
+} from '../utils/record.js';
+import {startListening, transcribeAndPaste} from '../utils/speech.js';
 
 export const apiKey = process.env['OPENAPI_API_KEY'];
 
@@ -73,7 +73,7 @@ export default function App() {
 		content = (
 			<Text>
 				Listening for global shortcut{' '}
-				<Text color="green">ctri+shift+alt+cmd+w</Text>...
+				<Text color="green">ctri+shift+alt+cmd+w to transcribe</Text>...
 			</Text>
 		);
 	}

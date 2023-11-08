@@ -1,6 +1,6 @@
 import FormData from 'form-data';
 import {request} from 'undici';
-import {apiKey} from '../app.js';
+import {apiKey} from '../app/app.js';
 
 const openaiEndpoint = 'https://api.openai.com/v1/audio/transcriptions';
 const model = 'whisper-1';

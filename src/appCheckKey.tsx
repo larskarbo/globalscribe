@@ -1,6 +1,6 @@
 import {Box, Newline, Text} from 'ink';
 import React from 'react';
-import App, {apiKey} from './app.js';
+import App, {apiKey} from './app/app.js';
 
 export default function AppCheckKey() {
 	if (apiKey) {

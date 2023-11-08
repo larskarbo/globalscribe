@@ -22,14 +22,14 @@ export async function startRecording(): Promise<void> {
 	if (recordingProcess !== null) {
 		throw new Error('Already recording.');
 	}
+	exec(`afplay ${onStartSound}`);
+
 	audioBuffer = [];
 	recordingProcess = spawn(cmd, args);
 
 	recordingProcess.stdout!.on('data', (data: Buffer) => {
 		audioBuffer.push(data);
 	});
-
-	exec(`afplay ${onStartSound}`);
 }
 
 export function isRecording(): boolean {
