@@ -3,6 +3,7 @@ import * as fs from 'fs';
 import path from 'path';
 import {Readable} from 'stream';
 import {fileURLToPath} from 'url';
+import { playSound } from './startSound.js';
 
 const cmd = 'sox';
 const args = ['-d', '-t', 'coreaudio', '-t', 'wav', '-'];
@@ -11,7 +12,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const soundBasePath = path.join(__dirname, `../../sounds/`);
-const onStartSound = path.join(soundBasePath, 'Hero.aiff');
 const onStopSound = path.join(soundBasePath, 'Submarine.aiff');
 const onCancelSound = path.join(soundBasePath, 'Cancel.aiff');
 
@@ -22,7 +22,7 @@ export async function startRecording(): Promise<void> {
 	if (recordingProcess !== null) {
 		throw new Error('Already recording.');
 	}
-	exec(`afplay ${onStartSound}`);
+	playSound()
 
 	audioBuffer = [];
 	recordingProcess = spawn(cmd, args);

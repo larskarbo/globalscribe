@@ -19,6 +19,7 @@
 	],
 	"dependencies": {
 		"afplay": "^1.0.4",
+		"audio-decode": "^2.1.5",
 		"clipboardy": "^3.0.0",
 		"form-data": "^4.0.0",
 		"ink": "^4.1.0",
@@ -26,6 +27,7 @@
 		"meow": "^11.0.0",
 		"node-fetch": "^4.0.0-beta.4",
 		"node-global-key-listener": "^0.1.1",
+		"node-web-audio-api": "^0.13.0",
 		"openai": "^3.3.0",
 		"react": "^18.2.0",
 		"robotjs": "^0.6.0",
